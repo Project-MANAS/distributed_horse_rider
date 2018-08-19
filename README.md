@@ -32,6 +32,14 @@ Launching them in separate windows for a better demonstration.
 
 Or, for more convenience, execute the [launch_distributed_horse_riders.sh](https://gist.github.com/reubenjohn/b714de7b47202a379642e30fd97e5853).
 
+Troubleshooting
+---
+Due to the simplicity of this demo, there isn't any graceful shutdown, you just kill the processes when you're done.
+Make sure to kill these processes. You'll be unable to launch this project until the previous launches have been shut down.
+
+Please [post issues](https://github.com/Project-MANAS/distributed_horse_rider/issues) if you face any!
+
 Fun Fact
 ---
-There are almost more characters in this README than code in the project XD
+sjdifo sdfiojsfiojsd foisjdf poisdjfowiehf wiofkwdfmowifhks ldfnj o asiodj aojoaisjd asdhoiuefhowifa ijadowdihaoidhawdiohawdifhwoeiflkfnjiodsfhsfojn.   
+*There are now more characters in this README than code in the project*
