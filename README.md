@@ -32,6 +32,14 @@ Under the ~~hood~~ analogies
 
 ![distributed_horse_rider Architecture](https://image.ibb.co/nQkHvz/distributed_horse_rider_architecture.png)
 
+Feeling adventurous? Playing with it
+---
+With just a little bit of tweaking,
+you can play with the number of horses and drivers,
+remove the input statements to benchmark the performance (spoiler I found it pretty impressive for a master-slave based IPC!),
+go full distributed - running it beyond your localhost and across multiple machine on the same LAN,
+or... whatever else is in these days. Enjoy!
+
 Troubleshooting
 ---
 Due to the simplicity of this demo, there isn't any graceful shutdown, you just kill the processes when you're done.
