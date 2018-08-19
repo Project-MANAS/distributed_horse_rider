@@ -10,7 +10,7 @@ There is a caravan with:
 Usage
 ---
 Launch two horse.py with task_index arguments 0 and 1 respectively, and similarly two rider.py.
-Launching them in separate windows for a better demonstration.
+Launch them in separate windows for a better demonstration.
   
     python3.5 -m distributed_horse_rider.horse 0
     python3.5 -m distributed_horse_rider.horse 1
