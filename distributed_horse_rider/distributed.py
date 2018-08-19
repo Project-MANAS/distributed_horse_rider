@@ -6,16 +6,15 @@ spec = tf.train.ClusterSpec({
 	"driver": [
 		"localhost:2221",
 		"localhost:2222",
-		# "localhost:2223",
-		# "localhost:2224",
 	],
 	"horse": [
 		"localhost:2231",
 		"localhost:2232",
-		# "localhost:2233",
-		# "localhost:2234",
 	]
 })
+
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
 
 
 class Horse:
@@ -33,6 +32,5 @@ class Rider:
 		measure_distance_covered = tf.divide(Horse.steps_taken, 2, 'measure_distance_covered')
 
 
-if len(sys.argv) != 2:
-	raise AssertionError("Task index not specified or is not an integer")
+assert len(sys.argv) == 2, "Task index not specified or is not an integer"
 task_index = int(sys.argv[1])

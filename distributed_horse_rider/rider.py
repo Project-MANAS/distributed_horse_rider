@@ -1,22 +1,14 @@
 import tensorflow as tf
 
-import distributed_horse_rider.distributed as dist
+from distributed_horse_rider.distributed import spec, task_index, config, Rider
 
-if dist.task_index == 0:
-	summary_writer = tf.summary.FileWriter('./logs', graph=tf.get_default_graph())
-	summary_writer.close()
+if task_index == 0:
+	tf.summary.FileWriter('./logs', graph=tf.get_default_graph()).close()
 
-config = tf.ConfigProto()
-config.gpu_options.allow_growth = True
-
-driver = tf.train.Server(dist.spec, job_name="driver", task_index=dist.task_index, config=config)
-
-with tf.Session(driver.target, config=config) as sess:
+with tf.Session(tf.train.Server(spec, job_name="driver", task_index=task_index, config=config).target) as sess:
 	sess.run(tf.global_variables_initializer())
-	print('Rider %d ready to whip! (Press any key)' % dist.task_index)
-	input()
+	input('Rider %d ready to whip! (Press any key)' % task_index)
 	for flick_intensity in range(10000):
 		print('Whip with intensity %d' % flick_intensity)
-		sess.run(dist.Rider.flick_whip, feed_dict={dist.Rider.flick_intensity: flick_intensity})
-		print('Total distance covered: %d, (Press any key for next whip!)' % sess.run(dist.Rider.measure_distance_covered))
-		input()
+		sess.run(Rider.flick_whip, feed_dict={Rider.flick_intensity: flick_intensity})
+		input('Total distance covered: %d, (Press any key for next whip!)' % sess.run(Rider.measure_distance_covered))
