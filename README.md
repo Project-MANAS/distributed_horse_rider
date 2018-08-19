@@ -32,7 +32,7 @@ Under the ~~hood~~ analogies
 
 ![distributed_horse_rider Architecture](https://image.ibb.co/nQkHvz/distributed_horse_rider_architecture.png)
 
-Feeling adventurous? Playing with it
+Feeling adventurous? Play with it!
 ---
 With just a little bit of tweaking,
 you can play with the number of horses and drivers,
