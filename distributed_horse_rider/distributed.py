@@ -32,5 +32,7 @@ class Rider:
 		measure_distance_covered = tf.divide(Horse.steps_taken, 2, 'measure_distance_covered')
 
 
-assert len(sys.argv) == 2, "Task index not specified or is not an integer"
-task_index = int(sys.argv[1])
+try:
+	task_index = int(sys.argv[1])
+except Exception as e:
+	raise ValueError("Integer task index argument expected", e)

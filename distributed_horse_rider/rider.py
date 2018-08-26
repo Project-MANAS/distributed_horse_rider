@@ -9,6 +9,6 @@ with tf.Session(tf.train.Server(spec, job_name="driver", task_index=task_index, 
 	sess.run(tf.global_variables_initializer())
 	input('Rider %d ready to whip! (Press any key)' % task_index)
 	for flick_intensity in range(10000):
-		print('Whip with intensity %d' % flick_intensity)
+		print('Whipping with intensity %d' % flick_intensity)
 		sess.run(Rider.flick_whip, feed_dict={Rider.flick_intensity: flick_intensity})
 		input('Total distance covered: %d, (Press any key for next whip!)' % sess.run(Rider.measure_distance_covered))

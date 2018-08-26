@@ -49,5 +49,5 @@ Please [post issues](https://github.com/Project-MANAS/distributed_horse_rider/is
 
 Fun Fact
 ---
-sjdifo sdfiojsfiojsd foisjdf poisdjfowiehf wiofkwdfmowifhks ldfnj o asiodj aojoaisjd asdhoiuefhowifa ijadowdihaoidhawdiohawdifhwoeiflkfnjiodsfhsfojn.   
-*There are now more characters in this README than code in the project*
+sjdifo sdfiojsfiojsd foisjdf poisdjfowiehf wiofkwdfmowifhks ldfnj o asiodj aojoaisjd asdhoiuefhowifa.   
+> There are more characters in this README than code in the project
