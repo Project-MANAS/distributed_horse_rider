@@ -3,7 +3,7 @@ import sys
 import tensorflow as tf
 
 spec = tf.train.ClusterSpec({
-	"driver": [
+	"rider": [
 		"localhost:2221",
 		"localhost:2222",
 	],
@@ -26,7 +26,7 @@ class Horse:
 
 
 class Rider:
-	with tf.device("/job:driver/task:0"):
+	with tf.device("/job:rider/task:0"):
 		flick_intensity = tf.placeholder(tf.int32, (), 'flick_intensity')
 		flick_whip = Horse.whip.enqueue(flick_intensity, 'flick_whip')
 		measure_distance_covered = tf.divide(Horse.steps_taken, 2, 'measure_distance_covered')
