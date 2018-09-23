@@ -1,17 +1,8 @@
-import sys
-
 import tensorflow as tf
 
-spec = tf.train.ClusterSpec({
-	"rider": [
-		"localhost:2221",
-		"localhost:2222",
-	],
-	"horse": [
-		"localhost:2231",
-		"localhost:2232",
-	]
-})
+from distributed_horse_rider.start_cluster import cluster_dict
+
+spec = tf.train.ClusterSpec(cluster_dict)
 
 config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
@@ -30,9 +21,3 @@ class Rider:
 		flick_intensity = tf.placeholder(tf.int32, (), 'flick_intensity')
 		flick_whip = Horse.whip.enqueue(flick_intensity, 'flick_whip')
 		measure_distance_covered = tf.divide(Horse.steps_taken, 2, 'measure_distance_covered')
-
-
-try:
-	task_index = int(sys.argv[1])
-except Exception as e:
-	raise ValueError("Integer task index argument expected", e)
